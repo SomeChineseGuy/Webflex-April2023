@@ -4,7 +4,7 @@ To Do
 
 - [x] Curriculum Overview
 - [x] Example problem workflow
-- [ ] Problem Solving tips
+- [x] Problem Solving tips
 - [x] Review Git workflow
 
 What is our problem?

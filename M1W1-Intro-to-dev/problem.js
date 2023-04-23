@@ -29,7 +29,8 @@ function arrSum(arr) {
       num += Number(arr[i])
     }
   }
-  console.log(num)
+  // console.log(num)
+  return num
 }
 
-arrSum(slice)
+console.log(arrSum(slice))
