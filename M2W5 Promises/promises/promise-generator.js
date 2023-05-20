@@ -4,6 +4,7 @@ const returnPromise = (value, delay = 1000) => {
   });
 };
 
+
 const returnRejectedPromise = (value, delay = 1000) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => reject(`doh! rejected: ${value}`), delay);
