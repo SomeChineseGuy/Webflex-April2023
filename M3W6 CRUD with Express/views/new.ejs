@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%- include('partials/_styles') %>
+</head>
+<body>
+  <h1>Add a new combo!</h1>
+  <div>
+    <form action="/combos/new" method="POST">
+      <label for="">Main</label>
+      <input type="text" id="" name="main" >
+      <br>
+      <label for="">Side</label>
+      <input type="text" name="side">
+      <br>
+      <label for="">Drink</label>
+      <input type="text" name="drink">
+      <br>
+      <button type="submit">Add new Item</button>
+    </form>
+  </div>
+</body>
+</html>

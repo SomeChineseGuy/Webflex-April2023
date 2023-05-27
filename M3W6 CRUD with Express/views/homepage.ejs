@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%- include('partials/_styles') %>
+</head>
+<body>
+  <div>
+    <h1> Welcome to our Food app!</h1>
+  </div>
+  <div>
+    <% for(let item in foodMenu) { %>
+      <h2>Combo <%= item %></h2>
+      <div>
+        <h2>Main: <%= foodMenu[item].main %></h2>
+        <h2>Side: <%= foodMenu[item].side %></h2>
+        <h2>Drink: <%= foodMenu[item].drink %></h2>
+        <form action="/combos/<%= item %>/delete" method="POST">
+          <button>Delete</button>
+        </form>
+      </div>
+      <form action="/combos/edit/<%= item %>" method="POST">
+        <label for="">Main</label>
+        <input type="text" name="main">
+        <br>
+        <label for="">Side</label>
+        <input type="text" name="side">
+        <br>
+        <label for="">Drink</label>
+        <input type="text" name="drink">
+        <br>
+        <button type="submit">Update</button>
+      </form>
+    <% } %>
+  </div>
+</body>
+</html>
