@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+#nav { 
+  display: flex;
+  justify-content: space-between;
+  background-color: #343a40;
+}
+
+#nav .left {
+  display: flex;
+}
+
+#nav .left h3 {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: rgba(255,255,255,0.55);
+}
+
+#nav .right {
+  display: flex;
+}
+
+#nav .right h3 {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: rgba(255,255,255,0.55);
+}
+
+#box-container {
+  background-color: aqua;
+  height: 25vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-one {
+  background-color: tomato;
+}
+
+.box-two {
+  background-color: pink;
+}
+
+.box-three {
+  background-color: blue;
+}
