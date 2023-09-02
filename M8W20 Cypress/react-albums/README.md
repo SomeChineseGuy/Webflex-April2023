@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# W08D03 - End-to-End Testing with Cypress
 
-## Available Scripts
+### To Do
 
-In the project directory, you can run:
+- [x] Jest vs Cypress
+- [x] Install and Configure Cypress
+- [x] Design End-to-End Tests with Cypress
 
-### `npm start`
+### Jest vs Cypress
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Jest
+  - Command line test runner
+  - Based around testing `assertions`
+  - Used for unit and integration testing (mostly)
+- Cypress
+  - Runs its own browser to execute the tests in
+  - Performs operations and interacts with the site the way that a user would (eg. typing into input fields, clicking on buttons)
+  - Used for integration and E2E testing (mostly)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Install and Configure Cypress
 
-### `npm test`
+- Cypress can be installed locally to the project (as a dev dependency) or globally on your OS
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install -g cypress
+npm install --save-dev cypress
+```
 
-### `npm run build`
+- Use the `open` command to start Cypress running
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# global installation
+cypress open
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+# local installation
+node_modules/.bin/cypress open
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Add a script to `package.json` for a quick way to start Cypress
 
-### `npm run eject`
+```json
+"cypress": "node_modules/.bin/cypress open"
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm run cypress
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- We use the `cypress.json` file in the main directory to configure Cypress
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```json
+{
+  "baseUrl": "http://localhost:3000",
+  "viewportWidth": 1280,
+  "viewportHeight": 1200
+}
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- `baseUrl` tells Cypress where our application is hosted and what port it's listening on
+- `viewportWidth` and `viewportHeight` specify the dimensions for Cypress' browser to use
+- Feel free to change the width and height values if developing for a mobile-first site
 
-## Learn More
+### Some Old Friends
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Cypress is built on top of Mocha and uses Chai assertions
+- Cypress comes with jQuery installed (accessible with `Cypress.$();`)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Useful Links
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [Cypress Docs](https://docs.cypress.io/api/api/table-of-contents.html)
+- [Cypress Best Practices (Official)](https://docs.cypress.io/guides/references/best-practices.html)
